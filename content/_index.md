@@ -1,0 +1,21 @@
+---
+title: "CloudLift - Chmura dla Startupów"
+hero_title: "Wysyłaj Szybciej z Infrastrukturą Chmurową dla Startupów"
+hero_description: "Przestań zmagać się ze skomplikowanymi konfiguracjami chmury. Wdrażaj za pomocą Dockera, uruchamiaj zarządzany PostgreSQL i skaluj bez wysiłku. Stworzone dla startupów, które muszą działać szybko."
+features:
+  - icon: "🐳"
+    title: "Natywne Wsparcie Docker"
+    description: "Wdrażaj kontenery natychmiast. Bez skomplikowanej orkiestracji—po prostu wyślij swoje obrazy Docker i gotowe."
+  - icon: "🗄️"
+    title: "Zarządzane Bazy Danych"
+    description: "PostgreSQL, Redis i więcej. W pełni zarządzane, auto-skalujące, z automatycznymi kopiami zapasowymi."
+  - icon: "⚡"
+    title: "Proste API"
+    description: "Wszystko jest na wyciągnięcie jednego wywołania API. Integruj w minuty z narzędziami, które już znasz i kochasz."
+  - icon: "💰"
+    title: "Ceny dla Startupów"
+    description: "Przejrzyste ceny, które rosną razem z Tobą. Bez niespodzianek na fakturze. Darmowy plan startowy."
+  - icon: "📊"
+    title: "Wgląd w Czasie Rzeczywistym"
+    description: "Monitoruj swoją infrastrukturę z wbudowaną obserwowalnością. Logi, metryki i ślady dostępne od razu."
+---

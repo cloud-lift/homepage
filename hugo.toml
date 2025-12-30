@@ -1,0 +1,8 @@
+baseURL = '/'
+languageCode = 'pl-pl'
+title = 'CloudLift'
+
+[params]
+  mainSections = ['blog']
+  blog_title = 'Blog'
+  blog_description = 'Przemyślenia i aktualności z CloudLift'

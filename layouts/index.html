@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }} - Dołącz do Zamkniętej Bety</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/mailerlite.css">
+
+    {{ if not hugo.IsServer }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K15TS2563G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K15TS2563G');
+    </script>
+    {{ end }}
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/images/logo.svg" alt="{{ .Site.Title }}" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="/" class="nav-link active">Strona główna</a>
+                    <a href="/blog" class="nav-link">Blog</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">{{ .Params.hero_title | default "Ship Faster with Startup-First Cloud Infrastructure" }}</h2>
+                <p class="hero-description">{{ .Params.hero_description | default "Stop wrestling with complex cloud setups. Deploy with Docker, spin up managed PostgreSQL, and scale effortlessly. Built for startups that need to move fast." }}</p>
+
+                <div class="waitlist-form" id="waitlist-form">
+                    <h3 class="form-title">Dołącz do Zamkniętej Bety</h3>
+                    <p class="form-subtitle">Uzyskaj wczesny dostęp i pomóż kształtować przyszłość infrastruktury chmurowej dla startupów</p>
+
+                    <!-- MailerLite Form -->
+                    <div id="mlb2-35018867" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-35018867">
+                        <div class="ml-form-align-center">
+                            <div class="ml-form-embedWrapper embedForm">
+                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                    <div class="ml-form-embedContent" style="display: none;">
+                                        <h4>Newsletter</h4>
+                                        <p>Signup for news and special offers!</p>
+                                    </div>
+
+                                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2000955/forms/174710451906544667/subscribe" data-code="" method="post" target="_blank">
+                                        <div class="ml-form-formContent">
+                                            <div class="ml-form-fieldRow ml-last-item">
+                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                    <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Wprowadź swój email" autocomplete="email">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="ml-submit" value="1">
+                                        <input type="hidden" name="anticsrf" value="true">
+
+                                        <div class="ml-form-embedSubmit">
+                                            <button type="submit" class="primary">Dołącz do Listy Oczekujących</button>
+                                            <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                                <div class="ml-form-embedSubmitLoad"></div>
+                                                <span class="sr-only">Ładowanie...</span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="ml-form-successBody row-success" style="display: none">
+                                    <div class="ml-form-successContent">
+                                        <h4>✓ Jesteś na liście!</h4>
+                                        <p>Dziękujemy za dołączenie! Wkrótce się z Tobą skontaktujemy z szczegółami wczesnego dostępu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End MailerLite Form -->
+                </div>
+            </div>
+
+            {{ if .Params.features }}
+            <div class="value-prop">
+                <h3 class="section-title">Wszystko, Czego Potrzebuje Twój Startup do Skalowania</h3>
+                <p class="section-subtitle">Skup się na budowaniu swojego produktu. My zajmiemy się infrastrukturą.</p>
+            </div>
+
+            <div class="features">
+                {{ range .Params.features }}
+                <div class="feature-card">
+                    <div class="feature-icon">{{ .icon }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            <div class="cta-section">
+                <h3 class="cta-title">Gotowy, by działać szybciej?</h3>
+                <p class="cta-description">Dołącz do myślących przyszłościowo startupów budujących na CloudLift. Dostępna ograniczona liczba miejsc w becie.</p>
+                <a href="#waitlist-form" class="cta-button">Dołącz do Listy Oczekujących</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. Wszelkie prawa zastrzeżone.</p>
+        </footer>
+    </div>
+
+    <!-- MailerLite Scripts -->
+    <script>
+        function ml_webform_success_35018867() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-35018867 .row-success').show();
+            $('.ml-subscribe-form-35018867 .row-form').hide();
+        }
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/2000955/forms/174710451906544667/takel")
+    </script>
+</body>
+</html>

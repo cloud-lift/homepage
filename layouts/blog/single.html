@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Summary }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    {{ if not hugo.IsServer }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K15TS2563G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K15TS2563G');
+    </script>
+    {{ end }}
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{{ .Site.BaseURL }}">
+                        <img src="/images/logo.svg" alt="{{ .Site.Title }}" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="{{ .Site.BaseURL }}" class="nav-link">Strona główna</a>
+                    <a href="/blog" class="nav-link">Blog</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="blog-container">
+            <article class="blog-post">
+                <header class="post-header">
+                    <div class="post-meta">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                        {{ if .Params.author }}
+                        <span class="post-author">Autor: {{ .Params.author }}</span>
+                        {{ end }}
+                    </div>
+                    <h1 class="post-title">{{ .Title }}</h1>
+                    {{ if .Params.tags }}
+                    <div class="post-tags">
+                        {{ range .Params.tags }}
+                        <span class="tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </header>
+
+                <div class="post-content">
+                    {{ .Content }}
+                </div>
+
+                <footer class="post-footer">
+                    <a href="/blog" class="back-link">← Powrót do bloga</a>
+                </footer>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. Wszelkie prawa zastrzeżone.</p>
+        </footer>
+    </div>
+</body>
+</html>
